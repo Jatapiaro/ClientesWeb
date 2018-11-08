@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Tarea 1 - Guiada</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <p:panel id="basic" header="Respuesta por defecto" footer="">
+            <h:panelGrid columns="2" cellpadding="10">
+                <h1>
+                    <h:outputText
+                        value="#{soapTutorialController.defaultName}" />
+                </h1>
+            </h:panelGrid>
+        </p:panel>
+        
+        <h:form>
+            <p:growl id="growl" life="2000" />
+            <p:panel header="Respuesta Con Input" style="margin-bottom:20px">    
+                 <h:panelGrid columns="2" cellpadding="10">
+                     <h:outputText id="saludo" value="#{soapTutorialController.salute}" />
+                 </h:panelGrid>
+                 <h:panelGrid columns="3" cellpadding="10">
+                     <h:outputText
+                         value="Ingresa tu nombre: " />
+                     <p:inputText value="#{soapTutorialController.name}"/>
+                     <p:commandButton value="Saludar" id="ajax" update="saludo growl" actionListener="#{soapTutorialController.makeSalutation()}" styleClass="ui-priority-primary" />
+                 </h:panelGrid>
+             </p:panel>
+        </h:form>    
+    </h:body>
+</html>

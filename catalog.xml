@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/ServiciosWeb/HelloWebService?wsdl" uri="src/conf/xml-resources/web-service-references/HelloWebService/wsdl/localhost_8080/ServiciosWeb/HelloWebService.wsdl"/>
+    <system systemId="http://localhost:8080/ServiciosWeb/HelloWebService?xsd=1" uri="src/conf/xml-resources/web-service-references/HelloWebService/wsdl/localhost_8080/ServiciosWeb/HelloWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ServiciosWeb/Calculadora?wsdl" uri="src/conf/xml-resources/web-service-references/Calculadora/wsdl/localhost_8080/ServiciosWeb/Calculadora.wsdl"/>
+    <system systemId="http://localhost:8080/ServiciosWeb/Calculadora?xsd=1" uri="src/conf/xml-resources/web-service-references/Calculadora/wsdl/localhost_8080/ServiciosWeb/Calculadora.xsd_1.xsd"/>
+</catalog>
