@@ -12,6 +12,8 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import com.jacobo.web.services.Calculadora_Service;
 import com.jacobo.web.services.Calculadora;
+import java.io.IOException;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -27,11 +29,14 @@ public class SoapCustomController implements Serializable {
     private String result;
     
     private String aString, bString;
+    private StringBuilder defaultPath;
     
     
     @PostConstruct()
     public void init() {
         this.initParameters(false);
+        defaultPath = new StringBuilder();
+        defaultPath.append(FacesContext.getCurrentInstance().getExternalContext().getApplicationContextPath());
     }
     
     /*
@@ -150,6 +155,10 @@ public class SoapCustomController implements Serializable {
      */
     public void setResult(String result) {
         this.result = result;
+    }
+    
+    public void goToIndex() throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect(this.defaultPath.toString());
     }
     
 }

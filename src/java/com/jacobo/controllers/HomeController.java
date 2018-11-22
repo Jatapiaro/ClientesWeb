@@ -37,4 +37,8 @@ public class HomeController implements Serializable {
         FacesContext.getCurrentInstance().getExternalContext().redirect(this.defaultPath.toString() + "tarea1/calculadora.xhtml");
     }
     
+    public void goToTareaDosPractica() throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect(this.defaultPath.toString() + "tarea2/practica.xhtml");
+    }
+    
 }

@@ -5,6 +5,7 @@
  */
 package com.jacobo.controllers;
 import com.jacobo.web.services.*;
+import java.io.IOException;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
@@ -21,10 +22,13 @@ import javax.inject.Named;
 public class SoapTutorialController implements Serializable {
     
     private String defaultName, name, salute;
+    private StringBuilder defaultPath;
     
     @PostConstruct
     public void init() {
       this.defaultName = this.callService("Fulanito");
+      defaultPath = new StringBuilder();
+      defaultPath.append(FacesContext.getCurrentInstance().getExternalContext().getApplicationContextPath());
     }
     
     /**
@@ -93,6 +97,10 @@ public class SoapTutorialController implements Serializable {
      */
     public void setSalute(String salute) {
         this.salute = salute;
+    }
+    
+    public void goToIndex() throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect(this.defaultPath.toString());
     }
     
 }

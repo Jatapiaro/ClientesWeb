@@ -18,6 +18,7 @@
                         value="Esta es una página web dedicada a las práticas y tareas de la materia Servicios de Red Informática y Arquitectura de Transferencia de Estado Representacional" />
                 </h:panelGrid>
             </p:panel>
+            
             <p:accordionPanel>
                 <p:tab title="Práctica SOAP">
                     <h:panelGrid columns="1" cellpadding="10">
@@ -40,6 +41,31 @@
                     </h:panelGrid>
                 </p:tab>  
             </p:accordionPanel>
+    
+            
+            <p:accordionPanel>
+                <p:tab title="Práctica guiada WSDL">
+                    <h:panelGrid columns="1" cellpadding="10">
+                        <h:outputText
+                            value="En esta sección podrás ver el cliente consultado de xmethods.org sugerido en la práctica guiada, además de la implementación de un cliente para un servicio totalmente distinto" />
+                        <p:panelGrid>
+                            <p:row>
+                                <p:column>
+                                    <p:commandButton 
+                                        value="Ver Cliente De Práctica" 
+                                        actionListener="#{homeController.goToTareaDosPractica()}"/>
+                                </p:column>
+                                <p:column>
+                                    <p:commandButton 
+                                        value="Ver Cliente De La Tarea ( Propio )"
+                                        actionListener="#{homeController.goToTareaUnoCalculadora()}"/>
+                                </p:column>
+                            </p:row>
+                        </p:panelGrid>
+                    </h:panelGrid>
+                </p:tab>  
+            </p:accordionPanel>
+            
         </h:form>
     </h:body>
     
