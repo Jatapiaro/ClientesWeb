@@ -5,4 +5,5 @@
     <system systemId="http://localhost:8080/ServiciosWeb/Calculadora?wsdl" uri="wsdl/localhost_8080/ServiciosWeb/Calculadora.wsdl"/>
     <system systemId="http://localhost:8080/ServiciosWeb/Calculadora?xsd=1" uri="wsdl/localhost_8080/ServiciosWeb/Calculadora.xsd_1.xsd"/>
     <system systemId="https://footballpool.dataaccess.eu/info.wso?WSDL" uri="wsdl/footballpool.dataaccess.eu/info.wso.wsdl"/>
+    <system systemId="http://footballpool.dataaccess.eu/info.wso?WSDL" uri="wsdl/footballpool.dataaccess.eu/info.wso.wsdl"/>
 </catalog>

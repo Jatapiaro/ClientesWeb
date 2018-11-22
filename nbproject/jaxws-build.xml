@@ -60,7 +60,7 @@
     </target>
     <target name="wsimport-client-info" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/info"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/info" destdir="${build.generated.dir}/jax-wsCache/info" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/info/wsdl/footballpool.dataaccess.eu/info.wso.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="https://footballpool.dataaccess.eu/info.wso?WSDL" xnocompile="true" xendorsed="true">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/info" destdir="${build.generated.dir}/jax-wsCache/info" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/info/wsdl/footballpool.dataaccess.eu/info.wso.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://footballpool.dataaccess.eu/info.wso?WSDL" xnocompile="true" xendorsed="true">
             <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/info/wsdl/footballpool.dataaccess.eu/info.wso.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/info"/>
         </wsimport>
@@ -71,7 +71,7 @@
         </copy>
     </target>
     <target name="wsimport-client-clean-info" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/https/footballpool_dataaccess"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/eu/dataaccess/footballpool"/>
         <delete dir="${build.generated.dir}/jax-wsCache/info"/>
     </target>
     <target name="wsimport-client-generate" depends="wsimport-client-HelloWebService, wsimport-client-Calculadora, wsimport-client-info"/>
