@@ -58,5 +58,53 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/com/jacobo/web/services"/>
         <delete dir="${build.generated.dir}/jax-wsCache/Calculadora"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-HelloWebService, wsimport-client-Calculadora"/>
+    <target name="wsimport-client-info" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/info"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/info" destdir="${build.generated.dir}/jax-wsCache/info" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/info/wsdl/footballpool.dataaccess.eu/info.wso.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://footballpool.dataaccess.eu/info.wso?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/info/wsdl/footballpool.dataaccess.eu/info.wso.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/info"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/info">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-info" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/eu/dataaccess/footballpool"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/info"/>
+    </target>
+    <target name="wsimport-client-HolidayService2" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/HolidayService2"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/HolidayService2" destdir="${build.generated.dir}/jax-wsCache/HolidayService2" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/HolidayService2/wsdl/holidaywebservice.com/HolidayService_v2/HolidayService2.asmx.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://holidaywebservice.com/HolidayService_v2/HolidayService2.asmx?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/HolidayService2/wsdl/holidaywebservice.com/HolidayService_v2/HolidayService2.asmx.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/HolidayService2"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/HolidayService2">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-HolidayService2" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/holidaywebservice/holidayservice_v2"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/HolidayService2"/>
+    </target>
+    <target name="wsimport-client-HolidayService2_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/HolidayService2_1"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/HolidayService2_1" destdir="${build.generated.dir}/jax-wsCache/HolidayService2_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/HolidayService2_1/wsdl/holidaywebservice.com/HolidayService_v2/HolidayService2.asmx.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://holidaywebservice.com/HolidayService_v2/HolidayService2.asmx?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/HolidayService2_1/wsdl/holidaywebservice.com/HolidayService_v2/HolidayService2.asmx.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/HolidayService2_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/HolidayService2_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-HolidayService2_1" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/holidaywebservice/holidayservice_v2"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/HolidayService2_1"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-HelloWebService, wsimport-client-Calculadora, wsimport-client-info, wsimport-client-HolidayService2, wsimport-client-HolidayService2_1"/>
 </project>

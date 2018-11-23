@@ -4,4 +4,7 @@
     <system systemId="http://localhost:8080/ServiciosWeb/HelloWebService?xsd=1" uri="src/conf/xml-resources/web-service-references/HelloWebService/wsdl/localhost_8080/ServiciosWeb/HelloWebService.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/ServiciosWeb/Calculadora?wsdl" uri="src/conf/xml-resources/web-service-references/Calculadora/wsdl/localhost_8080/ServiciosWeb/Calculadora.wsdl"/>
     <system systemId="http://localhost:8080/ServiciosWeb/Calculadora?xsd=1" uri="src/conf/xml-resources/web-service-references/Calculadora/wsdl/localhost_8080/ServiciosWeb/Calculadora.xsd_1.xsd"/>
+    <system systemId="https://footballpool.dataaccess.eu/info.wso?WSDL" uri="src/conf/xml-resources/web-service-references/info/wsdl/footballpool.dataaccess.eu/info.wso.wsdl"/>
+    <system systemId="http://footballpool.dataaccess.eu/info.wso?WSDL" uri="src/conf/xml-resources/web-service-references/info/wsdl/footballpool.dataaccess.eu/info.wso.wsdl"/>
+    <system systemId="http://holidaywebservice.com/HolidayService_v2/HolidayService2.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/HolidayService2_1/wsdl/holidaywebservice.com/HolidayService_v2/HolidayService2.asmx.wsdl"/>
 </catalog>

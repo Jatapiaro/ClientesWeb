@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+    <h:head>
+        <title>Tarea 2 - WSDL Propio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panel header="Diás festivos 2019 por país" style="margin-bottom:20px">
+            
+                <p:outputLabel for="country" value="País:" />
+                
+                <p:selectOneMenu id="country" value="#{wsdlCustomController.country}" style="width:125px">
+                    <p:ajax event="change" update="updt" listener="#{wsdlCustomController.fetchData()}" />
+                        <f:selectItem itemLabel="Canada" itemValue="Canada" />
+                        <f:selectItem itemLabel="Republic of Ireland" itemValue="Republic of Ireland" />
+                        <f:selectItem itemLabel="United States" itemValue="United States" />
+                </p:selectOneMenu>
+                
+                <br />
+                <br />
+                
+                <p:dataTable paginator="true" rows="10" id="updt" var="holiday" value="#{wsdlCustomController.holidays}">
+
+                    <p:column headerText="Nombre">
+                        <h:outputText value="#{holiday.name}" />
+                    </p:column>
+
+                    <p:column headerText="Fecha">
+                        <h:outputText value="#{holiday.date}" />
+                    </p:column>
+
+                </p:dataTable>
+                
+            </p:panel>
+            <p:commandButton actionListener="#{wsdlCustomController.goToIndex()}" value="Regresar al index"/>
+        </h:form>         
+    </h:body>
+</html>
