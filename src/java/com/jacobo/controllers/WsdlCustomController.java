@@ -56,6 +56,10 @@ public class WsdlCustomController implements Serializable {
         this.fetchData();
     }
     
+    /**
+    * Fetchs all data from the web service
+    * then it creates the custom Holiday to be stored on a list to be displayed
+    */
     public void fetchData() {
         Country c = this.getCountryEnum();
         List<HolidayCode> hc = this.getHolidaysAvailable(c).getHolidayCode();
@@ -73,6 +77,10 @@ public class WsdlCustomController implements Serializable {
         }
     }
     
+    /**
+    * Given a country, it translates the String value to the enumerator Value
+    * that is used by the WebService
+    */
     private Country getCountryEnum() {
         switch(this.country) {
             case "Canada":
