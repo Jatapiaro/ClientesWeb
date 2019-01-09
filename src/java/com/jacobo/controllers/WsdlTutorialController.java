@@ -71,6 +71,11 @@ public class WsdlTutorialController implements Serializable {
         return port.allTeamCoachNames();
     }
     
+    /**
+    * @param String sTeamName of the team where this player belongs
+    * @param String sRoleCode the code of the position of the player
+    * @return ArrayOfTeamPlayerName that contains all the players that belongs to a team and has a given role
+    */
     private ArrayOftTeamPlayerName allPlayersWithRole(java.lang.String sTeamName, java.lang.String sRoleCode) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
@@ -79,7 +84,9 @@ public class WsdlTutorialController implements Serializable {
     }
    
     
-    
+    /**
+    * Handles the change of a country from the select in the view
+    */
     public void onCountryChange() { 
         this.players = this.allPlayersWithRole(this.country, "defender").getTTeamPlayerName();
     }
